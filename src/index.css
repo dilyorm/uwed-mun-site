@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-uwed-blue to-uwed-dark bg-clip-text text-transparent;
+  }
+  
+  .underline-animation {
+    @apply relative inline-block;
+  }
+  
+  .underline-animation::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-uwed-blue transition-all duration-300;
+  }
+  
+  .underline-animation:hover::after {
+    @apply w-full;
+  }
+}
+
